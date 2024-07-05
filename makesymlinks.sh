@@ -10,7 +10,7 @@ dotfiles_dir=~/Projects/dotfiles
 
 dir=~/Projects/dotfiles                    # dotfiles directory
 olddir=~/Projects/dotfiles_old             # old dotfiles backup directory
-files="bashrc zshrc oh-my-zsh gitconfig"    # list of files/folders to symlink in homedir
+files="bashrc zshrc oh-my-zsh gitconfig tmux.conf"    # list of files/folders to symlink in homedir
 
 bin_dir=$dotfiles_dir/bin
 

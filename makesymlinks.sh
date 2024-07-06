@@ -96,7 +96,7 @@ fi
 install_zsh
 
 
-cmd_tools="fzf fd bat eza tldr git-delta meld ttf-meslo-nerd"
+cmd_tools="fzf fd bat eza tldr meld"
 
 for tool in $cmd_tools; do
     echo "Check if $tool is installed"
@@ -115,3 +115,7 @@ else
     echo "clone tmp"
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+echo "install nvm"
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash

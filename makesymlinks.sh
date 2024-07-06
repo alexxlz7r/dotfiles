@@ -94,3 +94,52 @@ fi
 }
 
 install_zsh
+
+
+cmd_tools="fzf fd bat eza"
+
+for tool in $cmd_tools; do
+    echo "Check if $tool is installed"
+    if [ -f /bin/$tool -o -f /usr/bin/$tool ]; then
+        echo "$tool is already installed"
+    else
+        echo "Installing $tool"
+        sudo pacman -Sy --noconfirm $tool
+    fi
+done
+
+
+#echo "Check if fzf is installed"
+#if [ -f /bin/fzf -o -f /usr/bin/fzf ]; then
+#    echo "fzf is already installed"
+#else
+#    echo "Installing fzf"
+#    sudo pacman -Sy --noconfirm fzf
+#fi
+
+#echo "Check if fd is installed"
+#if [ -f /bin/fd -o -f /usr/bin/fd ]; then
+#    echo "fd is already installed"
+#else 
+#    echo "Installing fd"
+#    sudo pacman -Sy --noconfirm fd
+#fi
+
+#echo "Check if bat is installed"
+#if [ -f /bin/bat -o -f /usr/bin/bat ]; then
+#    echo "bat is already installed"
+#else 
+#    echo "Installing bat"
+#    sudo pacman -Sy --noconfirm bat
+#fi
+
+#echo "Check if eza is installed"
+#if [ -f /bin/eza -o -f /usr/bin/eza ]; then
+#    echo "eza is already installed"
+#else 
+#    echo "Installing eza"
+#    sudo pacman -Sy --noconfirm eza
+#fi
+
+
+

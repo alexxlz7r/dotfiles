@@ -10,7 +10,7 @@ dotfiles_dir=~/Projects/dotfiles
 
 dir=~/Projects/dotfiles                    # dotfiles directory
 olddir=~/Projects/dotfiles_old             # old dotfiles backup directory
-files="bashrc zshrc oh-my-zsh gitconfig tmux.conf config/alacritty"    # list of files/folders to symlink in homedir
+files="bashrc zshrc oh-my-zsh gitconfig tmux.conf config/alacritty ssh/config"    # list of files/folders to symlink in homedir
 
 bin_dir=$dotfiles_dir/bin
 
@@ -29,8 +29,10 @@ for file in $files; do
     echo "File: $file"
     if [ -e ~/.$file ]; then
         if [ ! -L ~/.$file ]; then
+            echo "Create directory in $(dirname ${olddir}/${file})"
+            mkdir -p $(dirname $olddir/$file)
             echo "Moving any existing dotfiles from ~ to $olddir"
-            mv ~/.$file $olddir
+            mv -n  ~/.$file $olddir/$file
             echo "Creating symlink to $file in home directory."
             ln -s $dir/$file ~/.$file
         else

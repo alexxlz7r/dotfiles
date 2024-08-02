@@ -1,0 +1,12 @@
+
+# ssh-keygen -t ed25519 -C "your_email@example.com"
+
+Host github.com
+   HostName github.com
+   IdentityFile ~/.ssh/alexxlz7r_ed25519
+   IdentitiesOnly yes
+   
+Host github-efficiently
+   HostName github.com
+   IdentityFile ~/.ssh/efficiently_ed25519
+   IdentitiesOnly yes

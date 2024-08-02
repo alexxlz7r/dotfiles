@@ -13,7 +13,7 @@ msCodeInst=(code-eff code-python code-rust code-stable)
 for codeInst in "${msCodeInst[@]}"; do
 	vscode_inst_dir=$vscode_dir/$codeInst
 	mkdir -p $vscode_inst_dir
-	find $vscode_inst_dir -mindepth 1 ! -regex "^./${vscode_inst_dir}/data\(/.*\)?" -delete
+	find $vscode_inst_dir -mindepth 1 ! -regex "^${vscode_inst_dir}/data\(/.*\)?" -delete
 	echo "Extract code into ${vscode_inst_dir}"
 	tar -zxf code-stable.tar.gz -C $vscode_inst_dir --strip-components=1
 	mkdir -p $vscode_inst_dir/data

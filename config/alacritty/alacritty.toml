@@ -1,17 +1,23 @@
 live_config_reload = true
 
+# import = [
+#     "~/.config/alacritty/flexoki-dark/flexoki-dark.toml"
+# ]
+
+# import = [
+#   "~/.config/alacritty/themes/themes/ayu_dark.toml"
+# ]
+
 [font]
 size = 12
 
 [font.normal]
-family = "MesloLGS NF"
-
-
+family = "Inconsolata LGC Nerd Font"
 
 [window.padding]
 x = 0
 y = 0
 
 [shell]
-program="tmux"
+program="zsh"
 
